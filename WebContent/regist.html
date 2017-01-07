@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户注册</title>
+<script type="text/javascript">
+	function check() {
+		if (form1.username.value == "") {
+			alert("用户名不能为空");
+			return false;
+		}
+		if (form1.password.value.length < 4) {
+			alert("密码长度不能小于4");
+			return false;
+		}
+		if (form1.password.value != form1.password2.value) {
+			alert("密码不一致！");
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h3>注册新用户</h3>
+	<form name="form1" action="regist.jsp" method="post" onSubmit="return check()">
+		<table>
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" name="username" />(*)</td>
+			</tr>
+			<tr>
+				<td>密&nbsp;码：</td>
+				<td><input type="password" name="password" />(*)</td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td><input type="password" name="password2" /></td>
+			</tr>
+			<tr>
+				<td>Email：</td>
+				<td><input type="email" name="email" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="新用户注册" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
